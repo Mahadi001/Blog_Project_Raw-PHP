@@ -4,6 +4,9 @@ include "lib/Database.php";
 include "config/config.php";
 include "helpers/Format.php";
 
+$db = new Database;
+$formatter = new Format();
+
 ?>
 
 <!DOCTYPE html>

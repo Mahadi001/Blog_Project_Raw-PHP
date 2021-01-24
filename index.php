@@ -1,41 +1,48 @@
 <?php include "inc/header.php";?>
 <?php include "inc/slider.php"; ?>
+<?php 
+
+$query = "SELECT * FROM post_tbl limit 9";
+$all_courses = $db->read_data($query);
+
+?>
+
   <!-- Page Content -->
   <div class="container">
 
-    <h1 class="my-4">Welcome to Learning Norms</h1>
+    <h1 class="text-center my-5">Welcome to Learning Norms</h1>
 
     <!-- Marketing Icons Section -->
-    <div class="row">
+    <div class="row mb-5">
       <div class="col-lg-4 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">Free Courses</h4>
+          <h4 class="card-header text-center">Free Courses</h4>
           <div class="card-body">
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
           </div>
-          <div class="card-footer">
+          <div class="card-footer text-center">
             <a href="#" class="btn btn-primary">Learn More</a>
           </div>
         </div>
       </div>
       <div class="col-lg-4 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">Paid Couses</h4>
+          <h4 class="card-header text-center">Paid Couses</h4>
           <div class="card-body">
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
           </div>
-          <div class="card-footer">
+          <div class="card-footer text-center">
             <a href="#" class="btn btn-primary">Learn More</a>
           </div>
         </div>
       </div>
       <div class="col-lg-4 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">Request Courses</h4>
+          <h4 class="card-header text-center">Request Courses</h4>
           <div class="card-body">
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
           </div>
-          <div class="card-footer">
+          <div class="card-footer text-center">
             <a href="#" class="btn btn-primary">Learn More</a>
           </div>
         </div>
@@ -44,75 +51,32 @@
     <!-- /.row -->
 
     <!-- Portfolio Section -->
-    <h2>Available Courses</h2>
+    <h2 class="text-center">Available Courses</h2>
 
-    <div class="row">
+    <div class="row mt-5">
+    <?php 
+    if($all_courses){
+      while($courses = $all_courses->fetch_assoc()){      
+    ?>
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <a href="course.php?id=<?php echo $courses['id']; ?>"><img class="card-img-top" src="admin/upload/<?php echo $courses['image'];?>" alt="<?php echo $courses['title'];?>"></a>
           <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project One</a>
+            <h4 class="card-title text-center">
+              <a href="course.php?id=<?php echo $courses['id']; ?>"><?php echo $courses['title'];?></a>
             </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+            <p class="card-text"><?php echo $formatter->strimText($courses['body'], 100); ?></p>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Two</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Three</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Four</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Five</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Six</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-          </div>
-        </div>
-      </div>
+    
+    <?php 
+        }
+      }
+      else{
+        header("Location:404.php");
+      }
+    ?>
     </div>
     <!-- /.row -->
 
