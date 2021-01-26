@@ -21,28 +21,22 @@
             <div class="row">
               <div class="col-lg-6">
                 <ul class="list-unstyled mb-0">
+                <?php 
+                  $query = "SELECT * FROM category_tbl";
+                  $categories = $db->read_data($query);
+                  if($categories){
+                    while($category = $categories->fetch_assoc()){ 
+                ?>
                   <li>
-                    <a href="#">Web Design</a>
+                    <a href="categories.php?category=<?php echo $category['id']; ?>"><?php echo $category['name']; ?></a>
                   </li>
-                  <li>
-                    <a href="#">HTML</a>
-                  </li>
-                  <li>
-                    <a href="#">Freebies</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#">JavaScript</a>
-                  </li>
-                  <li>
-                    <a href="#">CSS</a>
-                  </li>
-                  <li>
-                    <a href="#">Tutorials</a>
-                  </li>
+                  <?php 
+                    }
+                  }
+                  else{
+                    echo "<li>No Category Found !!!</li>";
+                  }
+                  ?>
                 </ul>
               </div>
             </div>

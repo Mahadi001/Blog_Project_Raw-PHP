@@ -2,16 +2,16 @@
 <?php 
 
   $post_per_page = 3;
-  if(isset($_GET['page'])){
-    $page = $_GET['page'];
-  }else{
-    $page = 1;
+
+  if(!isset($_GET['category']) || $_GET['category'] == NULL){
+    header("Location:404.php");
   }
-  
-  $start = ($page - 1) * $post_per_page;
-  $query = "SELECT * FROM post_tbl limit $start, $post_per_page";
-  $read_values = $db->read_data($query);
-  
+  else{
+    $cat_id = $_GET['category'];
+  }
+  $query = "SELECT * FROM post_tbl where cat_id = $cat_id";
+  $courses = $db->read_data($query);
+    
 ?>
 
   <!-- Breadcrumb -->
@@ -37,20 +37,20 @@
       <div class="col-md-8">
 
         <?php 
-          if($read_values) {
-            while($values = $read_values->fetch_assoc()){
+          if($courses) {
+            while($course = $courses->fetch_assoc()){
         ?>
         <!-- Blog Post -->
         <div class="card mb-4">
-          <img class="card-img-top" src="admin/upload/<?php echo $values['image'];?>" alt="Card image cap">
+          <img class="card-img-top" src="admin/upload/<?php echo $course['image'];?>" alt="Card image cap">
           <div class="card-body">
-            <h2 class="card-title"><?php echo $values['title']; ?></h2>
-            <p class="card-text"><?php echo $formatter->strimText($values['body']); ?></p>
-            <a href="course.php?id=<?php echo $values['id']; ?>" class="btn btn-primary">Read More &rarr;</a>
+            <h2 class="card-title"><?php echo $course['title']; ?></h2>
+            <p class="card-text"><?php echo $formatter->strimText($course['body']); ?></p>
+            <a href="course.php?id=<?php echo $course['id']; ?>" class="btn btn-primary">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
-            Posted on <?php echo $formatter->formatDate($values['date']);?> by
-            <a href="#"><?php echo $values['author'];?></a>
+            Posted on <?php echo $formatter->formatDate($course['date']);?> by
+            <a href="#"><?php echo $course['author'];?></a>
           </div>
         </div>
         <?php 
@@ -58,17 +58,17 @@
         ?>
         <!-- Pagination -->
         <ul class="pagination justify-content-center mb-4">
-          <?php echo "<li class='page-item'><a class='page-link' href='courses.php?page=1'>&larr; First Page</a></li>";?>
+          <?php echo "<li class='page-item'><a class='page-link' href='categories.php?category=1'>&larr; First Page</a></li>";?>
           <?php 
-          $query  = "SELECT * FROM post_tbl";
+          $query  = "SELECT * FROM post_tbl where cat_id = $cat_id";
           $result = $db->read_data($query);
           $total_rows = mysqli_num_rows($result);
           $total_pages = ceil($total_rows / $post_per_page);
           for($i = 1; $i <= $total_pages; $i++){
-            echo "<li class='page-item'><a class='page-link' href='courses.php?page=".$i."'>".$i."</a></li>";
+            echo "<li class='page-item'><a class='page-link' href='categories.php?category=".$i."'>".$i."</a></li>";
           }
           ?>
-          <?php echo "<li class='page-item'><a class='page-link' href='courses.php?page=".$total_pages."'>Last Page &rarr;</a></li>"?> 
+          <?php echo "<li class='page-item'><a class='page-link' href='categories.php?category=".$total_pages."'>Last Page &rarr;</a></li>"?> 
         </ul>
         <?php 
           }   #end of if   
