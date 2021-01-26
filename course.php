@@ -66,7 +66,7 @@ $courses = $db->read_data($query);
         </blockquote>
 
         <div class="text-center">
-          <button class="btn btn-primary my-5">Enroll Now</button>
+          <a href="<?php echo $course['link'];?>" target='_blank' class="btn btn-primary my-5">Enroll Now</a>
         </div>
 
       </div>

@@ -49,12 +49,12 @@ $formatter = new Format();
           <li class="nav-item">
             <a class="nav-link" href="courses.php">Courses</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="faq.php">FAQ</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="pricing.php">Pricing</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>
           </li>

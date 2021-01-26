@@ -34,9 +34,9 @@
     <!-- /.row -->
 
     <!-- Team Members -->
-    <h2>About Author</h2>
+    <h2 class="text-center my-5">About Author</h2>
 
-    <div class="row">
+    <div class="row d-flex justify-content-center">
       <div class="col-lg-4 mb-4">
         <div class="card h-100 text-center">
           <img class="card-img-top" src="http://placehold.it/750x450" alt="">
@@ -52,31 +52,6 @@
       </div>
     </div>
     <!-- /.row -->
-
-    <!-- Our Customers -->
-    <h2>Our Customers</h2>
-    <div class="row">
-      <div class="col-lg-2 col-sm-4 mb-4">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </div>
-      <div class="col-lg-2 col-sm-4 mb-4">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </div>
-      <div class="col-lg-2 col-sm-4 mb-4">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </div>
-      <div class="col-lg-2 col-sm-4 mb-4">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </div>
-      <div class="col-lg-2 col-sm-4 mb-4">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </div>
-      <div class="col-lg-2 col-sm-4 mb-4">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </div>
-    </div>
-    <!-- /.row -->
-
   </div>
   <!-- /.container -->
 

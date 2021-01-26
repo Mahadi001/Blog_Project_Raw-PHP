@@ -3,13 +3,14 @@
 
   $post_per_page = 3;
 
-  if(!isset($_GET['category']) || $_GET['category'] == NULL){
+  if(!isset($_GET['search']) || $_GET['search'] == NULL){
     header("Location:404.php");
   }
   else{
-    $cat_id = $_GET['category'];
+    $search = $_GET['search'];
   }
-  $query = "SELECT * FROM post_tbl where cat_id = $cat_id";
+
+  $query = "SELECT * FROM post_tbl WHERE title LIKE '%$search%' OR  body LIKE '%$search%' ";
   $courses = $db->read_data($query);
     
 ?>
@@ -58,22 +59,22 @@
         ?>
         <!-- Pagination -->
         <ul class="pagination justify-content-center mb-4">
-          <?php echo "<li class='page-item'><a class='page-link' href='categories.php?category=1'>&larr; First Page</a></li>";?>
+          <?php echo "<li class='page-item'><a class='page-link' href='search.php?search=1'>&larr; First Page</a></li>";?>
           <?php 
-            $query  = "SELECT * FROM post_tbl where cat_id = $cat_id";
+            $query  = "SELECT * FROM post_tbl WHERE title LIKE '%$search%' OR  body LIKE '%$search%'";
             $result = $db->read_data($query);
             $total_rows = mysqli_num_rows($result);
             $total_pages = ceil($total_rows / $post_per_page);
             for($i = 1; $i <= $total_pages; $i++){
-              echo "<li class='page-item'><a class='page-link' href='categories.php?category=".$i."'>".$i."</a></li>";
+              echo "<li class='page-item'><a class='page-link' href='search.php?search=".$i."'>".$i."</a></li>";
             }
           ?>
-          <?php echo "<li class='page-item'><a class='page-link' href='categories.php?category=".$total_pages."'>Last Page &rarr;</a></li>"?> 
+          <?php echo "<li class='page-item'><a class='page-link' href='search.php?search=".$total_pages."'>Last Page &rarr;</a></li>"?> 
         </ul>
         <?php 
           }   #end of if   
           else{
-            header("Location:404.php");
+            echo "No data matches with the search keyword !!!";
           }
         ?>
       </div>
