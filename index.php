@@ -10,7 +10,7 @@ $all_courses = $db->read_data($query);
   <!-- Page Content -->
   <div class="container">
 
-    <h1 class="text-center my-5">Welcome to Learning Norms</h1>
+    <h1 class="text-center my-5 underline">Welcome to Learning Norms</h1>
 
     <!-- Marketing Icons Section -->
     <div class="row mb-5">
@@ -18,10 +18,10 @@ $all_courses = $db->read_data($query);
         <div class="card h-100">
           <h4 class="card-header text-center">Free Courses</h4>
           <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            <p class="card-text">Enroll to any of these free courses today!</p>
           </div>
           <div class="card-footer text-center">
-            <a href="#" class="btn btn-primary">Learn More</a>
+            <a href="courses.php" class="btn btn-primary">Learn More</a>
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@ $all_courses = $db->read_data($query);
         <div class="card h-100">
           <h4 class="card-header text-center">Paid Couses</h4>
           <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
+            <p class="card-text">Coming Soon...</p>
           </div>
           <div class="card-footer text-center">
             <a href="#" class="btn btn-primary">Learn More</a>
@@ -40,7 +40,7 @@ $all_courses = $db->read_data($query);
         <div class="card h-100">
           <h4 class="card-header text-center">Request Courses</h4>
           <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            <p class="card-text">Coming Soon...</p>
           </div>
           <div class="card-footer text-center">
             <a href="#" class="btn btn-primary">Learn More</a>
@@ -51,9 +51,9 @@ $all_courses = $db->read_data($query);
     <!-- /.row -->
 
     <!-- Portfolio Section -->
-    <h2 class="text-center">Available Courses</h2>
+    <h2 class="text-center underline my-5">Available Courses</h2>
 
-    <div class="row mt-5">
+    <div class="row">
     <?php 
     if($all_courses){
       while($courses = $all_courses->fetch_assoc()){      
@@ -83,21 +83,32 @@ $all_courses = $db->read_data($query);
     <!-- Features Section -->
     <div class="row">
       <div class="col-lg-6">
-        <h2>Modern Business Features</h2>
-        <p>The Modern Business template by Start Bootstrap includes:</p>
+        <h2>Learn all in one place!</h2>
+        <p>All the courses are focused on helping the students struggling in Computer Science field!</p>
         <ul>
           <li>
-            <strong>Bootstrap v4</strong>
+            <strong>PHP</strong>
           </li>
-          <li>jQuery</li>
-          <li>Font Awesome</li>
-          <li>Working contact form with validation</li>
-          <li>Unstyled page elements for easy customization</li>
+          <li>
+            <strong>Laravel</strong>
+          </li>
+          <li>
+            <strong>C++</strong>
+          </li>
+          <li>
+            <strong>Python</strong>
+          </li>
+          <li>
+            <strong>Datastructure and Algorithm</strong>
+          </li>
+          <li>
+            <strong>Many more....</strong>
+          </li>
         </ul>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
       </div>
       <div class="col-lg-6">
-        <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
+        <img class="img-fluid rounded" src="images/banner.jpg" alt="">
       </div>
     </div>
     <!-- /.row -->
@@ -110,7 +121,7 @@ $all_courses = $db->read_data($query);
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
       </div>
       <div class="col-md-4">
-        <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
+        <a class="btn btn-lg btn-secondary btn-block" href="courses.php">Check out the courses!</a>
       </div>
     </div>
 
