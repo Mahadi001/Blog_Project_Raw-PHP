@@ -39,11 +39,11 @@
     <div class="row d-flex justify-content-center">
       <div class="col-lg-4 mb-4">
         <div class="card h-100 text-center">
-          <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+          <img class="card-img-top" src="admin/upload/author.jpg" alt="abu al mahadi">
           <div class="card-body">
             <h4 class="card-title">Abu-Al Mahadi</h4>
             <h6 class="card-subtitle mb-2 text-muted">Web Developer</h6>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+            <p class="card-text">Coderstime</p>
           </div>
           <div class="card-footer">
             <a href="#">abualmahadi001@gmail.com</a>

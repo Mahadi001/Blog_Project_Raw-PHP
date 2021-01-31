@@ -21,17 +21,14 @@
           <h5 class="card-header">Categories</h5>
           <div class="card-body">
             <div class="row">
-              <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
+              <div class="col-lg-12">
                 <?php 
                   $query = "SELECT * FROM category_tbl";
                   $categories = $db->read_data($query);
                   if($categories){
                     while($category = $categories->fetch_assoc()){ 
                 ?>
-                  <li>
-                    <a href="categories.php?category=<?php echo $category['id']; ?>"><?php echo $category['name']; ?></a>
-                  </li>
+                  <a class="mr-2" href="categories.php?category=<?php echo $category['id']; ?>"><?php echo $category['name']; ?></a>
                   <?php 
                     }
                   }
@@ -39,7 +36,6 @@
                     echo "<li>No Category Found !!!</li>";
                   }
                   ?>
-                </ul>
               </div>
             </div>
           </div>
