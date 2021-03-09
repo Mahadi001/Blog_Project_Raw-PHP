@@ -1,7 +1,7 @@
 <?php include "inc/header.php";?>
 
   <!-- Breadcrumb -->
-  <ol class="breadcrumb">
+  <ol class="breadcrumb_custom">
     <div class="container">
       <ul class="flex m-0 p-0">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
